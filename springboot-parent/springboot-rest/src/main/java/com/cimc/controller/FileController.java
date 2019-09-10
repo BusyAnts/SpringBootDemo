@@ -1,5 +1,6 @@
 package com.cimc.controller;
 
+import com.cimc.entity.ResultData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -29,9 +30,9 @@ public class FileController {
 
     @RequestMapping(value = "upload")
     @ResponseBody
-    public String upload(@RequestParam("testFile") MultipartFile file) {
+    public ResultData upload(@RequestParam("testFile") MultipartFile file) {
         if (file.isEmpty()) {
-            return "文件为空";
+            return new ResultData(-1, null, "文件为空");
         }
 
         // 获取文件名
@@ -56,12 +57,12 @@ public class FileController {
 
         try {
             file.transferTo(dest);
-            return "上传成功";
+            return new ResultData(0, dest, "上传成功");
         } catch (IllegalStateException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return "上传失败";
+        return new ResultData(-1, "", "上传失败");
     }
 }
