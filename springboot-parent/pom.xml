@@ -10,6 +10,7 @@
     <modules>
         <module>springboot-rest</module>
         <module>springboot-freemarker</module>
+        <module>springboot-thymeleaf</module>
     </modules>
     <packaging>pom</packaging>
 
