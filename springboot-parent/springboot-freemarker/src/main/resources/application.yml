@@ -1,0 +1,11 @@
+spring:
+  freemarker:
+    cache: false  # 是否开启freemarker缓存,本地为false，生产建议为true
+    charset: UTF-8
+    allow-request-override: false
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    suffix: .ftl  # 文件后缀
+    template-loader-path: classpath:/templates/  # 路径
