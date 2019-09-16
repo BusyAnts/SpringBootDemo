@@ -11,6 +11,7 @@
         <module>springboot-rest</module>
         <module>springboot-freemarker</module>
         <module>springboot-thymeleaf</module>
+        <module>springboot-mybatis</module>
     </modules>
     <packaging>pom</packaging>
 
