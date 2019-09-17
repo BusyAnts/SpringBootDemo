@@ -1,0 +1,12 @@
+spring:
+  redis:
+    database: 0
+    host: 192.168.20.140
+    port: 6379
+    timeout: 3000  # 连接超时时间 单位 ms(毫秒)
+    lettuce:
+      pool:
+        max-active: 1000  # 连接池最大连接数（使用负值表示没有限制）
+        max-idle: 100  # 连接池中的最大空闲连接，默认值是8
+        min-idle: 5  # 连接池中的最小空闲连接，默认值是0
+        max-wait: 1000  # 连接池最大阻塞等待时间（使用负值表示没有限制）

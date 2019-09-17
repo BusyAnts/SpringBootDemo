@@ -12,6 +12,7 @@
         <module>springboot-freemarker</module>
         <module>springboot-thymeleaf</module>
         <module>springboot-mybatis</module>
+        <module>springboot-redis</module>
     </modules>
     <packaging>pom</packaging>
 
