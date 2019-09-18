@@ -13,6 +13,7 @@
         <module>springboot-thymeleaf</module>
         <module>springboot-mybatis</module>
         <module>springboot-redis</module>
+        <module>springboot-schedule</module>
     </modules>
     <packaging>pom</packaging>
 
