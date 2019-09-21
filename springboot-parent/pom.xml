@@ -15,6 +15,7 @@
         <module>springboot-redis</module>
         <module>springboot-schedule</module>
         <module>springboot-log</module>
+        <module>springboot-jdbc</module>
     </modules>
     <packaging>pom</packaging>
 
