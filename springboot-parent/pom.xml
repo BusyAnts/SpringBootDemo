@@ -16,6 +16,7 @@
         <module>springboot-schedule</module>
         <module>springboot-log</module>
         <module>springboot-jdbc</module>
+        <module>springboot-jpa</module>
     </modules>
     <packaging>pom</packaging>
 
