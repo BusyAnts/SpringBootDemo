@@ -17,6 +17,7 @@
         <module>springboot-log</module>
         <module>springboot-jdbc</module>
         <module>springboot-jpa</module>
+        <module>springboot-multiple-datasource</module>
     </modules>
     <packaging>pom</packaging>
 
