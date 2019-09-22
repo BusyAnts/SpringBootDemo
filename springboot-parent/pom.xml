@@ -18,6 +18,7 @@
         <module>springboot-jdbc</module>
         <module>springboot-jpa</module>
         <module>springboot-multiple-datasource</module>
+        <module>springboot-jta-atomikos</module>
     </modules>
     <packaging>pom</packaging>
 
