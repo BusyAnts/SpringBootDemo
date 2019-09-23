@@ -3,17 +3,45 @@ package com.cimc.controller;
 import com.cimc.entity.User;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author chenz
  * @create 2019-09-09 11:25
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/")
 public class UserController {
+
+    /**
+     * 分页获取用户信息
+     *
+     * @param page
+     * @param size
+     * @return
+     */
+    @GetMapping("/users")
+    public List<User> list(@RequestParam(value = "page", defaultValue = "1") String page, @RequestParam(value = "size", defaultValue = "10") String size) {
+        System.out.println("page: " + page);
+        System.out.println("size: " + size);
+        User user = new User();
+        user.setId(1L);
+        user.setName("James");
+        user.setAge(35);
+        user.setBirthday(new Date());
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setName("Kobe");
+        user2.setAge(40);
+        user2.setBirthday(new Date());
+
+        List<User> userList = new ArrayList<>();
+        userList.add(user);
+        userList.add(user2);
+        return userList;
+    }
+
 
     /**
      * 根据id获取用户信息
@@ -21,9 +49,8 @@ public class UserController {
      * @param id
      * @return
      */
-    @GetMapping("/get/{id}")
-    public User get(@PathVariable("id") Integer id, @RequestParam(value = "page", defaultValue = "1") String page) {
-        System.out.println(page);
+    @GetMapping("/user/{id}")
+    public User get(@PathVariable("id") Long id) {
         User user = new User();
         user.setId(id);
         user.setName("James");
@@ -33,13 +60,13 @@ public class UserController {
     }
 
     /**
-     * 保存
+     * 新建用户
      *
      * @param user
      * @return
      */
-    @PostMapping("/save")
-    public User save(@RequestBody User user) {
+    @PostMapping("/user")
+    public User create(@RequestBody User user) {
         return user;
     }
 
@@ -49,12 +76,20 @@ public class UserController {
      * @param user
      * @return
      */
-    @PutMapping("/update/{id}")
-    public User update(@PathVariable("id") Integer id, @RequestBody User user) {
-        User resUser = new User();
-        resUser = user;
-        resUser.setId(id);
-        return resUser;
+    @PutMapping("/user")
+    public User update(@RequestBody User user) {
+        return user;
+    }
+
+    /**
+     * 更新用户name字段
+     *
+     * @param user
+     * @return
+     */
+    @PatchMapping("/user/name")
+    public User patch(User user) {
+        return user;
     }
 
     /**
@@ -63,8 +98,8 @@ public class UserController {
      * @param id
      * @return
      */
-    @DeleteMapping("/delete/{id}")
-    public User delete(@PathVariable("id") Integer id) {
+    @DeleteMapping("/user/{id}")
+    public User delete(@PathVariable("id") Long id) {
         User user = new User();
         user.setId(id);
         return user;
@@ -72,11 +107,12 @@ public class UserController {
 
     /**
      * 获取请求头里的信息
+     *
      * @param access_token
      * @return
      */
-    @GetMapping("/getHeader")
-    public Map<String, Object> getHeader(@RequestHeader("access_token") String access_token) {
+    @GetMapping("/user/header")
+    public Map<String, Object> header(@RequestHeader("access_token") String access_token) {
         Map<String, Object> map = new HashMap<>();
         map.put("access_token", access_token);
         return map;
