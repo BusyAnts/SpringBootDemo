@@ -20,6 +20,7 @@
         <module>springboot-multiple-datasource</module>
         <module>springboot-jta-atomikos</module>
         <module>springboot-base-web</module>
+        <module>springboot-swagger2</module>
     </modules>
     <packaging>pom</packaging>
 

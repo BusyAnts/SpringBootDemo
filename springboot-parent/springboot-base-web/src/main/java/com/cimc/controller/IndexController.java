@@ -12,6 +12,7 @@ public class IndexController {
 
     @GetMapping("/index")
     public String index() {
+        System.out.println("index");
         return "index";
     }
 
