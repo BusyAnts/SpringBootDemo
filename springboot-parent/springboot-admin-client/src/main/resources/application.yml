@@ -8,9 +8,12 @@ spring:
     admin:
       client:
         url: http://localhost:8000  # admin server的地址
+        instance:
+          service-base-url: http://localhost:8001
 
 management:
   endpoints:
     web:
       exposure:
-        include: '*' # 打开Actuator的监控
+        include: "*" # 打开Actuator的监控
+        exclude: configprops  # 删除对配置信息的监控

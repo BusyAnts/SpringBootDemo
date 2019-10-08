@@ -24,6 +24,7 @@
         <module>springboot-actuator</module>
         <module>springboot-admin-server</module>
         <module>springboot-admin-client</module>
+        <module>springboot-websocket</module>
     </modules>
     <packaging>pom</packaging>
 
