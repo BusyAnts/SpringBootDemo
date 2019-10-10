@@ -11,6 +11,10 @@ import java.util.Date;
  * @author chenz
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "User.findByName",query = "select u from User u where u.name=?1"),
+        @NamedQuery(name = "User.findByAge",query = "select u from User u where u.age=?1"),
+})
 @Table(name = "t_user")
 @Data
 public class User {

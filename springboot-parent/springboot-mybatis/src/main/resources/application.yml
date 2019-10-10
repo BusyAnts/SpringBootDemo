@@ -24,3 +24,4 @@ spring:
 mybatis:
   #mapper-locations: classpath:mybatis-mapper/*.xml  # mybatis的SQL文件路径
   type-aliases-package: com.cimc.entity  # 配置实体类别名
+  config-location: classpath:mybatis/mybatis-config.xml  # mybatis配置文件
