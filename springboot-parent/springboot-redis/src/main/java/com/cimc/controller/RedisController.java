@@ -1,7 +1,7 @@
 package com.cimc.controller;
 
 import com.cimc.util.JsonData;
-import com.cimc.util.RedisUtil;
+import com.cimc.util.StringRedisTemplateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,7 +20,7 @@ public class RedisController {
     private StringRedisTemplate redisTemplate;
 
     @Autowired
-    private RedisUtil redisUtil;
+    private StringRedisTemplateUtil redisUtil;
 
     @GetMapping(value = "add")
     public Object add() {
