@@ -1,11 +1,11 @@
 spring:
   datasource:
-    one:
-      username: root
-      password: chenZhen
-      driver-class-name: com.mysql.jdbc.Driver  # 可以自动识别
-      url: jdbc:mysql://localhost:3306/springboot_demo?useUnicode=true&characterEncoding=utf-8&useSSL=false
-      druid:
+    druid:
+      one:
+        username: root
+        password: chenZhen
+        driver-class-name: com.mysql.jdbc.Driver  # 可以自动识别
+        url: jdbc:mysql://localhost:3306/springboot_demo?useUnicode=true&characterEncoding=utf-8&useSSL=false
         initial-size: 5  # 初始化连接大小
         max-active: 20  # 最大连接数
         min-idle: 10    # 最小空闲连接数
@@ -19,18 +19,14 @@ spring:
         test-while-idle: true
         keep-alive: true
         phyMaxUseCount: 1000
-        filter:
-          stat:
-            enabled: true  # 配置监控统计拦截的filters
-    two:
-      username: root
-      password: chenZhen
-      driver-class-name: com.mysql.jdbc.Driver  # 可以自动识别
-      url: jdbc:mysql://localhost:3306/springboot_demo2?useUnicode=true&characterEncoding=utf-8&useSSL=false
-      druid:
-        initial-size: 5  # 初始化连接大小
-        max-active: 20  # 最大连接数
-        min-idle: 10    # 最小空闲连接数
+      two:
+        username: root
+        password: chenZhen
+        driver-class-name: com.mysql.jdbc.Driver  # 可以自动识别
+        url: jdbc:mysql://localhost:3306/springboot_demo2?useUnicode=true&characterEncoding=utf-8&useSSL=false
+        initial-size: 6  # 初始化连接大小
+        max-active: 30  # 最大连接数
+        min-idle: 15    # 最小空闲连接数
         max-wait: 60000  # 配置获取连接等待超时的时间
         validationQuery: select 1
         test-on-borrow: false
@@ -41,6 +37,12 @@ spring:
         test-while-idle: true
         keep-alive: true
         phyMaxUseCount: 1000
-        filter:
-          stat:
-            enabled: true  # 配置监控统计拦截的filters
+      stat-view-servlet:  # StatViewServlet配置
+        enabled: true
+        login-username: admin
+        login-password: admin
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 2000
+
