@@ -26,6 +26,7 @@
         <module>springboot-admin-client</module>
         <module>springboot-websocket</module>
         <module>springboot-jpa-multi</module>
+        <module>springboot-mail</module>
     </modules>
     <packaging>pom</packaging>
 
