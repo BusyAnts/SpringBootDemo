@@ -63,4 +63,5 @@ public class MailServiceTest {
 
         mailService.sendHtmlMail("542846618@qq.com", "主题：这是模板邮件", emailContent);
     }
+
 }

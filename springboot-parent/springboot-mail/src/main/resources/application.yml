@@ -10,3 +10,12 @@ spring:
           connectiontimeout: 5000  # 超时时间，可选
           timeout: 3000
           writetimeout: 5000
+  thymeleaf:
+    cache: false  # 开发时关闭缓存,不然没法看到实时页面
+    mode: HTML5
+    prefix: classpath:/templates/
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    suffix: .html
+
