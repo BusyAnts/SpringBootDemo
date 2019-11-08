@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    username: admin
+    password: Abc_123456
+    driver-class-name: com.mysql.jdbc.Driver  # 可以自动识别
+    url: jdbc:mysql://192.168.20.95:8066/test?useUnicode=true&characterEncoding=utf-8&useSSL=false
