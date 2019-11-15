@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cimc.mapper.PurchaseMapper">
+
+    <resultMap id="purchaseMap" type="Purchase">
+        <id column="id" property="id"/>
+        <result column="purchase_price" property="purchasePrice"></result>
+        <result column="purchase_num" property="purchaseNum"></result>
+        <result column="purchase_sum" property="purchaseSum"></result>
+        <result column="purchase_buyer" property="purchaseBuyer"></result>
+        <result column="purchase_date" property="purchaseDate"></result>
+        <result column="company_id" property="companyId"></result>
+        <result column="goods_id" property="goodsId"></result>
+    </resultMap>
+
+    <select id="getAll" resultMap="purchaseMap">
+        SELECT *
+        FROM t_purchase
+    </select>
+
+    <insert id="insertPurchase" parameterType="Purchase">
+        INSERT INTO t_purchase (id, purchase_price, purchase_num, purchase_sum,
+                                purchase_buyer, purchase_date, company_id, goods_id)
+        VALUES (#{id}, #{purchasePrice}, #{purchaseNum}, #{purchaseSum},
+                #{purchaseBuyer}, #{purchaseDate}, #{companyId}, #{goodsId})
+    </insert>
+
+    <insert id="insertPurchaseBatch">
+        INSERT INTO t_purchase (id, purchase_price, purchase_num, purchase_sum,
+                                purchase_buyer, purchase_date, company_id, goods_id)
+        VALUES
+        <foreach collection="list" item="purchase" separator=",">
+            (#{purchase.id}, #{purchase.purchasePrice}, #{purchase.purchaseNum}, #{purchase.purchaseSum},
+            #{purchase.purchaseBuyer}, #{purchase.purchaseDate}, #{purchase.companyId}, #{purchase.goodsId})
+        </foreach>
+    </insert>
+</mapper>
